@@ -75,10 +75,9 @@ html
 </body>
 </html>
 
+css
 
-
-html
-	@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 body{
 	font-family: 'Poppins', sans-serif;
