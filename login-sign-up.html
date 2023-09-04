@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login_sign_up.css">
+    <link rel="shortcut icon" href="/assts/favicon/icons8-pikachu-64.png" type="image/x-icon">
+    <title>Login and Sign Up</title>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="center-elements">
+                        <h6 class="mb-0-pb-3"><button id="loginButton" class="link-button"
+                                style="margin-right: 10px;">Log In</button><button id="signupButton"
+                                class="link-button">Sign Up</button></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" />
+                        <label for="reg-log" class="toggle-label"></label>
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-3d-wrapper">
+                                <div id="loginCard" class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Log In</h4>
+                                            <div class="form-group">
+                                                <input type="email" name="logemail" class="form-style"
+                                                    placeholder="Digite seu Email" id="logemail" autocomplete="off">
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style"
+                                                    placeholder="Digite sua senha" id="logpass" autocomplete="off">
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <div class="button-container">
+                                                <button class="btn mt-4 submit-button">Submit</button>
+                                            </div>
+                                            <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your
+                                                    password?</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="signupCard" class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign Up</h4>
+                                            <div class="form-group">
+                                                <input type="text" name="logname" class="form-style"
+                                                    placeholder="Digite seu nome completo" id="logname"
+                                                    autocomplete="off" required>
+                                                <i class="input-icon uil uil-user"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="email" name="logemail" class="form-style"
+                                                    placeholder="Digite seu Email" id="logemail" autocomplete="off"
+                                                    required>
+                                                <i class="input-icon uil uil-at"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style"
+                                                    placeholder="Digite sua senha" id="logpass" autocomplete="off"
+                                                    required>
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <input type="password" name="logpass" class="form-style"
+                                                    placeholder="Confirme sua senha" id="logpass" autocomplete="off"
+                                                    required>
+                                                <i class="input-icon uil uil-lock-alt"></i>
+                                            </div>
+                                            <div class="button-container">
+                                                <button class="btn mt-4 submit-button">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const regLogCheckbox = document.getElementById('reg-log');
+        const cardWrapper = document.querySelector('.card-3d-wrapper');
+        const loginButton = document.getElementById('loginButton');
+        const signupButton = document.getElementById('signupButton');
+        const submitButton = document.getElementById('submitButton');
+
+        regLogCheckbox.addEventListener('change', () => {
+            if (regLogCheckbox.checked) {
+                cardWrapper.style.transform = 'rotateY(180deg)';
+            } else {
+                cardWrapper.style.transform = 'rotateY(0deg)';
+            }
+        });
+
+
+        loginButton.addEventListener('click', () => {
+            console.log("Log In button clicked");
+            cardWrapper.style.transform = 'rotateY(0deg)';
+            regLogCheckbox.checked = false;
+        });
+
+        signupButton.addEventListener('click', () => {
+            console.log("Sign Up button clicked");
+            cardWrapper.style.transform = 'rotateY(180deg)';
+            regLogCheckbox.checked = true;
+        });
+
+        /*regLogCheckbox.addEventListener('change', () => {
+            if (regLogCheckbox.checked) {
+                submitButton.href = '#signup'; // Link para a seção de Sign Up
+            } else {
+                submitButton.href = '#login'; // Link para a seção de Login
+            }
+        });*/
+
+    </script>
+
+</body>
